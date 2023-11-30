@@ -30,6 +30,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
+            set -e
             cd /home/ubuntu/drf_ci-cd
             git pull origin main
 
