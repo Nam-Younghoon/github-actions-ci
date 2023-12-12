@@ -32,7 +32,7 @@ jobs:
           script: |
             set -e
             cd /home/ubuntu/test/drf_test
-            git pull origin master
+            git pull origin main
 
             echo "SECRET_KEY=\"${{ secrets.SECRET_KEY }}\"" > .env
             echo "DEBUG='${{ secrets.DEBUG }}'" >> .env
