@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             set -e
-            cd /home/ubuntu/drf_ci-cd
+            cd /home/ubuntu/test/drf_test
             git pull origin main
 
             echo "SECRET_KEY=\"${{ secrets.SECRET_KEY }}\"" > .env
@@ -39,4 +39,4 @@ jobs:
 
             source venv/bin/activate
             pip install -r requirements.txt
-            sudo systemctl restart site.service
+            sudo systemctl restart drf.service
