@@ -31,11 +31,11 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             set -e
-            cd /home/ubuntu/test/drf_test
+            cd /home/ubuntu/test/github-actions-ci
             git pull origin main
 
-            echo "SECRET_KEY=\"${{ secrets.SECRET_KEY }}\"" > .env
-            echo "DEBUG='${{ secrets.DEBUG }}'" >> .env
+            echo "SECRET_KEY=\"${{ secrets.SECRET_KEY }}\"" > drf_test/.env
+            echo "DEBUG='${{ secrets.DEBUG }}'" >> drf_test/.env
 
             source venv/bin/activate
             pip install -r requirements.txt
